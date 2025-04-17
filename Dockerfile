@@ -1,18 +1,20 @@
 # Use the .NET SDK image to build the app
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /app/hw03  # Set the working directory to /app/hw03
+WORKDIR /app/hw03
 
 # Copy the .csproj file and restore dependencies
 COPY hw03/*.csproj ./
-RUN dotnet restore  # Restore dependencies
+RUN dotnet restore
 
 # Copy the rest of the files from the hw03 directory
-COPY hw03/. ./  # Copy all files from hw03 directory
-RUN dotnet publish -c Release -o out  # Publish the app to the 'out' folder
+COPY hw03/. ./
+RUN dotnet publish -c Release -o /app/hw03/out
 
 # Use the runtime image for the final image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
-WORKDIR /app/hw03  # Set the working directory to /app/hw03
+WORKDIR /app/hw03
+
+# Copy the published output from the build image
 COPY --from=build /app/hw03/out .
 
 EXPOSE 80
