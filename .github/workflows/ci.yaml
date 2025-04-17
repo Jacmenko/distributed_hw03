@@ -43,7 +43,7 @@ jobs:
         run: dotnet restore
 
       - name: Build the project
-        run: dotnet publish Hw03/Hw03.csproj -c Release -o output
+        run: dotnet publish hw03/hw03.csproj -c Release -o output
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
