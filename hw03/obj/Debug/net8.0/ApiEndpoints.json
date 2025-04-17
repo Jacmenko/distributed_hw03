@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "hw03.Controllers.Hw03Controller",
+    "Method": "Get",
+    "RelativePath": "hw03",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "queryAirportTemp",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "queryStockPrice",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "queryEval",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
