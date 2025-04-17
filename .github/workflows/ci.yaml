@@ -43,12 +43,13 @@ jobs:
         run: dotnet restore
 
       - name: Build the project
-        run: dotnet publish -c Release -o output
+        run: dotnet publish Hw03/Hw03.csproj -c Release -o output
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: Hw03/output/wwwroot
+          path: output/wwwroot
+
 
   deploy:
     needs: build-and-deploy
